@@ -10,6 +10,7 @@ function ExpenseItem(props) {
   return (
     <div className="expense-item">
       {/* <div>{props.date.toLocaleDateString()}</div> */}
+
       <ExspenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{props.title}</h2>
