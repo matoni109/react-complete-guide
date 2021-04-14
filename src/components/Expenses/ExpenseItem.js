@@ -1,7 +1,7 @@
 import "./ExpenseItem.css";
 import "./ExpenseDate";
 import ExspenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 // this is a test
 function ExpenseItem(props) {
   // const expenseDate = new Date(2021, 2, 27);
