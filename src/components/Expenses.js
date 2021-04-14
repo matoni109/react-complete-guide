@@ -1,5 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
-
+import "./Expenses.css";
 function Expenses(props) {
   // {
   //   console.log(props.expenses);
@@ -8,7 +8,7 @@ function Expenses(props) {
 
   const final = expArr.map((element, index) => {
     return (
-      <div className="expenses">
+      <div>
         <ExpenseItem
           title={element.title}
           amount={element.amount}
@@ -19,6 +19,6 @@ function Expenses(props) {
     );
   });
   // console.log(final);
-  return <div>{final}</div>;
+  return <div className="expenses">{final}</div>;
 }
 export default Expenses;
