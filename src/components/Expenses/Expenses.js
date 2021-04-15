@@ -9,7 +9,7 @@ const Expenses = (props) => {
   //   console.log(props.expenses);
   // }
   // set state store
-  const [enteredYear, setEnteredYear] = useState("2020");
+  const [enteredYear, setEnteredYear] = useState("2021");
   // filter year object to send up to expense.js
 
   const getYearHandler = (year) => {
