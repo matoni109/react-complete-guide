@@ -72,6 +72,8 @@ const ExpenseForm = (props) => {
     //
     // execute the fuction from the parent !!
     //
+    //
+    // onAddExpese from NewExpense.JS
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");

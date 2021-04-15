@@ -11,6 +11,7 @@ const NewExpense = (props) => {
     };
     console.log(expenseData);
     // execute the fuction from the props up to theparent !!
+    // onAddExpese from App.JS
     props.onAddExpense(expenseData);
   };
 
