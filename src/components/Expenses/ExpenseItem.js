@@ -1,17 +1,20 @@
+import React, { useState } from "react";
+
 import "./ExpenseItem.css";
 import "./ExpenseDate";
 import ExspenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
+
 // this is a test
 function ExpenseItem(props) {
+  //
+  const [title, setTitle] = useState(props.title);
   // const expenseDate = new Date(2021, 2, 27);
   // const expenseTitle = "Car Insurance";
   // const expenseAmount = 294.67;
-
-  let title = props.title;
   const clickedHandler = () => {
     console.log("yay");
-    title = "updated";
+    setTitle("updated");
   };
 
   return (
