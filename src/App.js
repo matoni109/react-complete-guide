@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
-  const expenses = [
+  const [enteredExpenses, setNewExpense] = useState([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -24,17 +24,30 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+  // const expenses = ;
+
+  const saveExpenseDateHandler = (oldExpenseData, newDataObject) => {
+    // copy array
+    const expenseData = [...oldExpenseData];
+    // add new object to arr
+    expenseData.unshift(newDataObject);
+    //
+    // set new state
+    setNewExpense(expenseData);
+  };
 
   const addExpenseHandler = (expense) => {
     console.log("In App.JS");
-    console.log(expense);
+    // console.log(expense);
+    saveExpenseDateHandler(enteredExpenses, expense);
+    // console.log(enteredExpenses);
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses items={enteredExpenses} />
     </div>
   );
 }

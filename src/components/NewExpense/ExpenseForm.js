@@ -74,6 +74,7 @@ const ExpenseForm = (props) => {
     //
     //
     // onAddExpese from NewExpense.JS
+    // sends state up to NewExpense
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");

@@ -5,32 +5,33 @@ import "./Expenses.css";
 import Card from "../UI/Card";
 
 const Expenses = (props) => {
-  // {
-  //   console.log(props.expenses);
-  // }
-  // set state store
   const [enteredYear, setEnteredYear] = useState("2021");
   // filter year object to send up to expense.js
 
   const getYearHandler = (year) => {
     console.log("In Expenses.JS");
-    console.log(year);
     setEnteredYear(year);
   };
   //
-  const expArr = props.expenses;
+  const expArr = props.items;
 
-  const final = expArr.map((element, index) => {
-    return (
-      <ExpenseItem
-        title={element.title}
-        amount={element.amount}
-        date={element.date}
-        key={element.id}
-      />
-    );
-  });
-  // console.log(final);
+  const final = expArr
+    .filter(
+      (thisYear) =>
+        enteredYear ===
+        thisYear.date.toLocaleString("en-AU", { year: "numeric" })
+    )
+    .map((element) => {
+      return (
+        <ExpenseItem
+          title={element.title}
+          amount={element.amount}
+          date={element.date}
+          key={element.id}
+        />
+      );
+    });
+
   return (
     <div>
       <Card className="expenses">
