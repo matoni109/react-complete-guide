@@ -27,21 +27,27 @@ function App() {
   ]);
   // const expenses = ;
 
-  const saveExpenseDateHandler = (oldExpenseData, newDataObject) => {
-    // copy array
-    const expenseData = [...oldExpenseData];
-    // add new object to arr
-    expenseData.unshift(newDataObject);
-    //
-    // set new state
-    setNewExpense(expenseData);
-  };
+  // const saveExpenseDateHandler = (oldExpenseData, newDataObject) => {
+  // my code
+  // // copy array / state
+  // const expenseData = [...oldExpenseData];
+  // // add new object to arr
+  // expenseData.unshift(newDataObject);
+  // //
+  // // set new state
+  // setNewExpense(expenseData);
+  // max code
+  // };
 
   const addExpenseHandler = (expense) => {
     console.log("In App.JS");
     // console.log(expense);
-    saveExpenseDateHandler(enteredExpenses, expense);
+    // saveExpenseDateHandler(enteredExpenses, expense);
     // console.log(enteredExpenses);
+    setNewExpense((prevExpenses) => {
+      // add expense to existing arr
+      return [expense, ...prevExpenses];
+    });
   };
 
   return (
