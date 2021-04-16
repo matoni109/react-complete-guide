@@ -36,7 +36,7 @@ function App() {
   // //
   // // set new state
   // setNewExpense(expenseData);
-  // max code
+  //
   // };
 
   const addExpenseHandler = (expense) => {

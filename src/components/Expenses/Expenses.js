@@ -17,9 +17,7 @@ const Expenses = (props) => {
 
   const final = expArr
     .filter(
-      (thisYear) =>
-        enteredYear ===
-        thisYear.date.toLocaleString("en-AU", { year: "numeric" })
+      (thisYear) => enteredYear === thisYear.date.getFullYear().toString()
     )
     .map((element) => {
       return (
