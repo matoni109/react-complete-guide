@@ -24,21 +24,26 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
   };
 
-  if (showForm) {
-    return (
-      <div className="new-expense">
-        <button onClick={changeStateHandler}>Add New Expense</button>
-      </div>
-    );
-  }
+  // if (showForm) {
+  //   return (
+  //     <div className="new-expense">
+  //       <button onClick={changeStateHandler}>Add New Expense</button>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="new-expense">
       {/* {passes saveExpenseDateHandler to the child element } */}
-      <ExpenseForm
-        onToggle={changeStateHandler}
-        onSaveExpenseData={saveExpenseDateHandler}
-      />
+      {showForm && (
+        <button onClick={changeStateHandler}>Add New Expense</button>
+      )}
+      {!showForm && (
+        <ExpenseForm
+          onToggle={changeStateHandler}
+          onSaveExpenseData={saveExpenseDateHandler}
+        />
+      )}
     </div>
   );
 };
