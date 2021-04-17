@@ -22,6 +22,7 @@ const NewExpense = (props) => {
     // execute the fuction from the props up to theparent !!
     // onAddExpese from App.JS
     props.onAddExpense(expenseData);
+    setFormState(true);
   };
 
   // if (showForm) {
