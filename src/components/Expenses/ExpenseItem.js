@@ -17,16 +17,18 @@ function ExpenseItem(props) {
   // };
 
   return (
-    <Card className="expense-item">
-      {/* <div>{props.date.toLocaleDateString()}</div> */}
+    <il>
+      <Card className="expense-item">
+        {/* <div>{props.date.toLocaleDateString()}</div> */}
 
-      <ExspenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">{props.amount}</div>
-      </div>
-      {/* <button onClick={clickedHandler}>Change Title</button> */}
-    </Card>
+        <ExspenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">{props.amount}</div>
+        </div>
+        {/* <button onClick={clickedHandler}>Change Title</button> */}
+      </Card>
+    </il>
   );
 }
 export default ExpenseItem;
