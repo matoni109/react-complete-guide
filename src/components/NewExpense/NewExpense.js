@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
+  // set the state
+  const [showForm, setFormState] = useState(true);
+
+  // set state handler
+  const changeStateHandler = () => {
+    setFormState((showForm) => !showForm);
+  };
+
+  // save expense object
   const saveExpenseDateHandler = (enteredExpenseData) => {
     // expenseData object gets passed as an args to props going UP to parent
     const expenseData = {
@@ -15,10 +24,21 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
   };
 
+  if (showForm) {
+    return (
+      <div className="new-expense">
+        <button onClick={changeStateHandler}>Add New Expense</button>
+      </div>
+    );
+  }
+
   return (
     <div className="new-expense">
       {/* {passes saveExpenseDateHandler to the child element } */}
-      <ExpenseForm onSaveExpenseData={saveExpenseDateHandler} />
+      <ExpenseForm
+        onToggle={changeStateHandler}
+        onSaveExpenseData={saveExpenseDateHandler}
+      />
     </div>
   );
 };
