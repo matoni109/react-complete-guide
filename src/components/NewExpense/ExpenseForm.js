@@ -64,7 +64,7 @@ const ExpenseForm = (props) => {
     // expenseData object gets passed as an args to props going UP to parent
     const expenseData = {
       title: enteredTitled,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
